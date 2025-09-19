@@ -2,52 +2,54 @@ package day9.school;
 
 public class Student {
 
-    final String nNum ; // 한번 정해지면 변하지 않음 -> 세터 비존재
-    String nName;
-    String korean;
-    String English;
-    String Math;
+    private static int serialNum = 1000 ;
+    private final int studentID ;// 한번 정해지면 변하지 않음 -> 세터 비존재
+    private final String nName;
+    private int korean;
+    private int English;
+    private int Math;
 
-    Student(String nName,String nNum){
+    Student(String nName){
         this.nName = nName;
-        this.nNum = nNum;
+        this.studentID = serialNum++;
     }
 
-    public void grantScore(String korean,String english , String math){
+    public void grantScore(int korean,int english , int math){
         this.setKorean(korean);
         this.setEnglish(english);
         this.setMath(math);
     }
 
-    public String getnNum() {
-        return nNum;
+    public int getStudentID() {
+        return studentID;
     }
+
 
     public String getnName() {
         return nName;
     }
 
-    public String getKorean() {
+    public int getKorean() {
         return korean;
     }
 
-    public void setKorean(String korean) {
+    public void setKorean(int korean) {
         this.korean = korean;
     }
 
-    public String getEnglish() {
+    public int getEnglish() {
         return English;
     }
 
-    public void setEnglish(String english) {
+    public void setEnglish(int english) {
         English = english;
     }
 
-    public String getMath() {
+    public int getMath() {
         return Math;
     }
 
-    public void setMath(String math) {
+    public void setMath(int math) {
         Math = math;
     }
 }
