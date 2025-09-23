@@ -36,4 +36,15 @@ public class Manager {
         long balance = input.nextLong();
         return new Account(accountNumber, balance, c1);
     }
+
+    public Customer searchCustomer(String ssn) {
+        System.out.println(ssn);
+        Customer c = null;
+        for(Customer customer : customerList){
+            if(ssn.equals(customer.getSSN())){
+                c = customer;
+            }
+        }
+        return c;
+    }
 }

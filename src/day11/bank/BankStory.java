@@ -9,11 +9,39 @@ public class BankStory {
     //When the account is created, adding the account to the customer's account list
     //Manager has her own customer list. enroll the customer on the list.
     public static void processCreateAccount() {
-        Customer c1 = bankManager.createCustomer();
-        Account a1 = bankManager.createAccount(c1);
-        c1.getAccountList().add(a1);
+        while(true){
+
+            ui.printCreateAccountOpt();
+            int no = ui.selectMenu();
+
+            switch (no){
+                case 1 : {
+                    Customer c1 = bankManager.createCustomer();
+                    Account a1 = bankManager.createAccount(c1);
+                    c1.getAccountList().add(a1);
 //        bankManager.getCustomerList().add(c1);
-        bankManager.addCustomer(c1);
+                    bankManager.addCustomer(c1);
+                }
+                case 2 : {
+                    String ssn = ui.inputSSN();
+                    //Check whether this customer is exsited in manager's customer list
+                    Customer c = bankManager.searchCustomer(ssn);
+                    if (c !=null){
+                    Account a2 = bankManager.createAccount(c);
+                    c.getAccountList().add(a2);
+                    }
+                    else {
+                        System.out.println("Fail to search customer");
+                    }
+                }
+
+                case 3 : return;
+                default :
+                    System.out.println("Not exsiting menu number");
+                    break;
+            }
+        }
+
     }
 
     public static void main(String[] args) {

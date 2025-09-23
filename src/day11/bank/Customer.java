@@ -14,6 +14,10 @@ public class Customer {
         this.address = address;
     }
 
+    public Customer(String name) {
+        this.setName(name);
+    }
+
     public String getName() {
         return Name;
     }
