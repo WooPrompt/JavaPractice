@@ -28,11 +28,7 @@ public class Manager extends Person {
     }
 
     public Student makeStudentInstance() {
-        System.out.print("Name : ");
-        String name = scan.nextLine();
-        System.out.print("\nAge : ");
-        int age = scan.nextInt();
-        scan.nextLine(); //buffer
+        commonInput();
         Student student = new Student(name, age);
         addManageList(student);
         return student;
@@ -45,11 +41,7 @@ public class Manager extends Person {
     }
 
     public Teacher makeTeacherInstance() {
-        System.out.print("Name : ");
-        String name = scan.nextLine();
-        System.out.print("\nAge : ");
-        int age = scan.nextInt();
-        scan.nextLine(); //buffer
+        commonInput();
         System.out.print("\nSubject : ");
         String subject = scan.nextLine();
         Teacher teacher = new Teacher(name, age, subject);
@@ -57,6 +49,13 @@ public class Manager extends Person {
         return teacher;
     }
 
+    private void commonInput(){
+        System.out.print("Name : ");
+        name = scan.nextLine(); // temporary store name and age into the manager's fields.
+        System.out.print("\nAge : ");
+        age = scan.nextInt();
+        scan.nextLine(); //buffer
+    }
 
     public void printWholeProfile() {
         for (int i = 0; i < index; i++) {
