@@ -7,6 +7,8 @@ public class Teacher extends Person{
         super(name,age);
         this.subject = subject;
     }
+
+    @Override
     public void printProfile(){
         super.printProfile();
         System.out.printf(" , 과목 : %s\n",subject);
