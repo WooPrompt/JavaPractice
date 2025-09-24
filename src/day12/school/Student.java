@@ -15,4 +15,13 @@ public class Student extends Person {
         System.out.printf(" , 학번 : %d\n", studentID);
         System.out.println("저는 학생 입니다.");
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentID=" + studentID +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
