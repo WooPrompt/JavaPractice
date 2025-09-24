@@ -1,6 +1,8 @@
 package day12.school;
 
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 public class Manager extends Person {
@@ -61,6 +63,21 @@ public class Manager extends Person {
         for (int i = 0; i < index; i++) {
             manageList[i].printProfile();
         }
+    }
+
+    public void findPerson(String name){
+        String result=null;
+        for(int i = 0; i<index; i++){
+            if (name.equals(manageList[i].name)) {
+                result = manageList[i].name;
+            }
+        }
+        if ((result != null)) {
+            System.out.println(result+" is listed");
+        } else {
+            System.out.println("not found");
+        }
+
     }
 
 }
