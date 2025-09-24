@@ -8,7 +8,8 @@ public class Teacher extends Person{
         this.subject = subject;
     }
     public void printProfile(){
-        System.out.printf("나이 : %d , 이름 : %s , 과목 : %s\n",age,name,subject);
+        super.printProfile();
+        System.out.printf(" , 과목 : %s\n",subject);
         System.out.println("저는 선생 입니다.");
     }
 }

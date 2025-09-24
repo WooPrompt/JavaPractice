@@ -36,7 +36,5 @@ public class Manager extends Person {
             manageList[i].printProfile();
         }
     }
-    public void getManagerListSize() {
-        System.out.println("Manager List : "+index+" People\n");
-    }
+
 }

@@ -11,7 +11,8 @@ public class Student extends Person {
 
 
     public void printProfile(){
-        System.out.printf("나이 : %d , 이름 : %s , 학번 : %d\n",age,name,studentID);
+        super.printProfile();
+        System.out.printf(" , 학번 : %d\n",studentID);
         System.out.println("저는 학생 입니다.");
     }
 }
