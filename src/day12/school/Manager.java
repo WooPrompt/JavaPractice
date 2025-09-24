@@ -1,38 +1,65 @@
 package day12.school;
 
 
+import java.util.Scanner;
+
 public class Manager extends Person {
     private Person[] manageList;
     private int index;
-
-
+    private Scanner scan = new Scanner(System.in);
 
     public Manager(int size) {
-        super("manager",29);
+        super("manager", 29);
         manageList = new Person[size];
     }
 
+
     public void addManageList(Person person) {
-        if(manageList[index]==null) {
+        if (manageList[index] == null) {
             manageList[index++] = person;
-            System.out.printf(person.name + " is added to the manager list(Total : %d)\n",index);
+            System.out.printf(person.name + " is added to the manager list(Total : %d)\n", index);
         }
     }
 
     public Student makeStudentInstance(String name, int age) {
-        Student student = new Student(name,age);
+        Student student = new Student(name, age);
+        addManageList(student);
+        return student;
+    }
+
+    public Student makeStudentInstance() {
+        System.out.print("Name : ");
+        String name = scan.nextLine();
+        System.out.print("\nAge : ");
+        int age = scan.nextInt();
+        scan.nextLine(); //buffer
+        Student student = new Student(name, age);
         addManageList(student);
         return student;
     }
 
     public Teacher makeTeacherInstance(String name, int age, String subject) {
-        Teacher teacher = new Teacher(name,age,subject);
+        Teacher teacher = new Teacher(name, age, subject);
         addManageList(teacher);
         return teacher;
     }
 
-    public void printWholeProfile(){
-        for(int i = 0; i<index;i++){
+    public Teacher makeTeacherInstance() {
+        System.out.print("Name : ");
+        String name = scan.nextLine();
+        System.out.print("\nAge : ");
+        int age = scan.nextInt();
+        scan.nextLine(); //buffer
+        System.out.print("\nSubject : ");
+        String subject = scan.nextLine();
+        Teacher teacher = new Teacher(name, age, subject);
+        addManageList(teacher);
+        return teacher;
+    }
+
+
+    public void printWholeProfile() {
+        for (int i = 0; i < index; i++) {
             manageList[i].printProfile();
         }
     }
