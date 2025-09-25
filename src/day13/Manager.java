@@ -79,31 +79,50 @@ public class Manager extends Person {
 
     }
 
-    public void deletePerson(String name){
-        int writeIndex  = 0;
-        int foundCount = 0;
-
-        for(int i = 0; i<manageList.length; i++){
-            if(manageList[i] !=null && name.equals(manageList[i].name)){
-                foundCount++;
-            }
-            else{
-                manageList[writeIndex] = manageList[i];
-                writeIndex++;
+//    public void deletePerson(String name){
+//        int writeIndex  = 0;
+//        int foundCount = 0;
+//
+//        for(int i = 0; i<manageList.length; i++){
+//            if(manageList[i] !=null && name.equals(manageList[i].name)){
+//                foundCount++;
+//            }
+//            else{
+//                manageList[writeIndex] = manageList[i];
+//                writeIndex++;
+//            }
+//        }
+//
+//        if(foundCount == 0){
+//            System.out.println(name+"님을 찾을 수 없습니다.");
+//        }else{
+//            for(int i = writeIndex; i< index; i++){
+//                manageList[i] = null;
+//            }
+//
+//            index = writeIndex;
+//
+//            System.out.println(name+"님의 정보 "+foundCount+"건을 삭제했습니다.");
+//        }
+//    }
+public void deletePerson(String name){
+        int count = 0;
+        for(int i =0; i<index; i++){
+            if(manageList[i]!=null && manageList[i].name.equals(name)){
+                for(int j =i; j<index; j++){
+                    manageList[j] = manageList[j+1];
+                }
+                count++;
+                index--;
+                i--;
             }
         }
-
-        if(foundCount == 0){
-            System.out.println(name+"님을 찾을 수 없습니다.");
-        }else{
-            for(int i = writeIndex; i< index; i++){
-                manageList[i] = null;
-            }
-
-            index = writeIndex;
-
-            System.out.println(name+"님의 정보 "+foundCount+"건을 삭제했습니다.");
+        if(count != 0){
+            System.out.println(name+"님의 정보"+count+"건을 삭제 했습니다.");
         }
-    }
+        else {
+            System.out.println(name+"님의 정보"+count+"건을 삭제 했습니다.");
+        }
+}
 
 }
