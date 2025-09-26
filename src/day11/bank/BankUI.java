@@ -13,6 +13,7 @@ public class BankUI {
         System.out.println("3.Withdraw");
         System.out.println("4.Transfer");
         System.out.println("5.Print");
+        System.out.println("6.Exit");
         System.out.println("-".repeat(30));
     }
 

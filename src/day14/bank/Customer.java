@@ -1,4 +1,4 @@
-package day11.bank;
+package day14.bank;
 
 import java.util.ArrayList;
 
@@ -46,10 +46,19 @@ public class Customer {
         return accountList;
     }
 
-    @Override
-    public String toString() {
-        return this.getName()+"님의 계좌 리스트 \n" +
-                 accountList;
+    public void getAccountDetail (){
+        System.out.println();
+        System.out.printf("-%s님의 보유 계좌 목록-\n",getName());
+        System.out.println("=".repeat(50));
+        for(int i =0 ; i<accountList.size(); i++){
+            System.out.printf("%d. 계좌 번호 : %s , 잔고 : ￦%d\n",i+1,accountList.get(i).getAccountNumber(),accountList.get(i).getBalance());
+        }
+        System.out.println("=".repeat(50));
+
+    }
+
+    public Account getSpecificAccount(int index){
+        return accountList.get(index);
     }
 
     public void setAccountList(ArrayList<Account> accountList) {

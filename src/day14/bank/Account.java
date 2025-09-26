@@ -1,4 +1,4 @@
-package day11.bank;
+package day14.bank;
 
 public class Account {
     private String accountNumber;
@@ -38,5 +38,11 @@ public class Account {
 
     private void transfer(Customer c){
 
+    }
+
+    @Override
+    public String toString() {
+        return "계좌번호 : " + accountNumber  +
+                ", 잔고 : ￦" + balance;
     }
 }
