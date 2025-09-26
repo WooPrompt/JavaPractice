@@ -1,37 +1,36 @@
 package day14.shipping;
 
-public class Truck extends Vehicle{
-
-    public Truck(double maxLoad){
+public class Barge extends Vehicle {
+    String name;
+    public Barge(double maxLoad){
         capacity = maxLoad+"kg";
     }
 
     @Override
     double calculateTripDistance() {
-        return 100.0;
+        return 50.0;
     }
 
     @Override
     String getName() {
-        return "Truck ";
+        return "Barge";
     }
 
     @Override
     double calculateFuelEfficiency() {
-        return 8.1;
+        return 5.2;
     }
 
     @Override
     void requiredFuel() {
-        System.out.printf("탈것 %s는 %.3fL의 연료가 필요합니다.\n", this.getName(), this.calculatedFuelNeeds());
+        System.out.printf("\n탈것 %s는 %.3fL의 연료가 필요합니다.\n", this.getName(), this.calculatedFuelNeeds());
     }
-
 
     @Override
     public String toString() {
-        return "Truck{" +
+        return "Barge{" +
                 "name='" + getName() + '\'' +
-                "capacity='" + capacity + '\'' +
+                ", capacity='" + capacity + '\'' +
                 '}';
     }
 }
