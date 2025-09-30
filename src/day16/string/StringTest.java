@@ -46,5 +46,10 @@ public class StringTest {
         String message = hello.concat(world);
         System.out.println(message);
 
+//        System.identityHashCode()
+        System.out.println(System.identityHashCode(hello));
+        System.out.println(System.identityHashCode(world));
+        //you can check the memory address is different . it creates new String object every time. so, it is waste of memory. String object is immutable, but StringBuffer and Builder are mutable.
+        System.out.println(System.identityHashCode(message));
     }
 }
